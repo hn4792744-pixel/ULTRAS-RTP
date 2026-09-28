@@ -1,0 +1,48 @@
+# Calm, premium sounds. Use dotted sound keys (see minecraft.wiki/w/Sounds.json).
+# sound: none  -> silent.
+enabled: true
+
+gui-open:
+  sound: block.amethyst_block.chime
+  volume: 0.7
+  pitch: 1.2
+gui-click:
+  sound: ui.button.click
+  volume: 0.6
+  pitch: 1.2
+countdown-start:
+  sound: block.beacon.activate
+  volume: 0.4
+  pitch: 1.6
+countdown:
+  sound: block.note_block.chime
+  volume: 0.5
+  pitch: 1.2
+success:
+  sound: block.amethyst_block.resonate
+  volume: 0.8
+  pitch: 1.0
+cancelled:
+  sound: block.note_block.bass
+  volume: 0.6
+  pitch: 0.7
+error:
+  sound: block.note_block.bass
+  volume: 0.7
+  pitch: 0.5
+cooldown:
+  sound: block.note_block.hat
+  volume: 0.6
+  pitch: 0.8
+no-safe-location:
+  sound: block.note_block.didgeridoo
+  volume: 0.6
+  pitch: 0.6
+world-not-allowed:
+  sound: block.note_block.bass
+  volume: 0.6
+  pitch: 0.9
+reload:
+  sound: block.amethyst_block.chime
+  volume: 0.7
+  pitch: 1.6

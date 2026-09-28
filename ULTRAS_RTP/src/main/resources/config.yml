@@ -1,0 +1,117 @@
+# ═══════════════════════════════════════════
+#  ULTRAS_RTP • Developer: UC_Hussein
+# ═══════════════════════════════════════════
+
+language: en            # en | ar  (files in /languages)
+
+command:
+  # If another plugin already owns /rtp, handle /rtp anyway through
+  # PlayerCommandPreprocessEvent (the other plugin is NOT disabled or modified).
+  override-conflicts: true
+
+countdown:
+  actionbar: true       # ◇ ʀᴛᴘ • 𝟹s above the hearts (non-interactive)
+
+cooldown:
+  start-on: SUCCESS     # SUCCESS = only after a successful RTP | START = when countdown begins
+
+# Direct /rtp (gui.enabled=false) or open the GUI (true).
+gui:
+  enabled: false
+  # Only controls visibility in the GUI, never the RTP itself.
+  worlds:
+    world:
+      enabled: true
+      slot: 11
+    world_nether:
+      enabled: true
+      slot: 13
+    world_the_end:
+      enabled: true
+      slot: 15
+
+# Used when the player's world is not RTP-enabled (lobby, spawn, hub...).
+# Priority: 1) current world enabled -> RTP here
+#           2) world has its own fallback-to-world -> use it, else fallback.enabled
+#           3) fallback on -> fallback.target-world (must be enabled + loaded)
+#           4) fallback off -> "not available here"
+fallback:
+  enabled: true
+  target-world: world
+
+# Optional /rtp sounds toggle stored per player (UUID). Off by default so
+# /rtp <TAB> shows nothing for normal players.
+player-sound-toggle:
+  enabled: false
+
+permissions:
+  use: ultras.rtp.use
+  reload: ultras.rtp.reload
+  bypass-cooldown: ultras.rtp.bypass.cooldown
+  bypass-move: ultras.rtp.bypass.move
+  admin: ultras.rtp.admin
+
+# Values used when a world does not define them.
+defaults:
+  min-radius: 500
+  max-radius: 5000
+  countdown: 3
+  cooldown: 30
+  cancel-on-move: true
+  movement-threshold: 0.3
+  max-attempts: 30         # safe-location attempts
+  allow-water: false
+  height-mode: AUTO        # AUTO | HIGHEST | SCAN  (AUTO: Nether=SCAN, others=HIGHEST)
+  blocked-biomes: []       # e.g. [deep_ocean, frozen_ocean]
+
+# Add any world you want (world folder name).
+worlds:
+  world:
+    enabled: true
+    display-name: "World"
+    min-radius: 500
+    max-radius: 5000
+    center-x: 0
+    center-z: 0
+    cooldown: 30
+    countdown: 3
+    cancel-on-move: true
+    movement-threshold: 0.3
+    max-attempts: 30
+    allow-water: false
+    height-mode: AUTO
+    permission: ""         # optional extra permission for this world
+
+  world_nether:
+    enabled: false
+    display-name: "Nether"
+    min-radius: 300
+    max-radius: 3000
+    fallback-to-world: true  # if disabled: players in the Nether go to fallback.target-world
+    cooldown: 30
+    countdown: 3
+    cancel-on-move: true
+    max-attempts: 30
+    height-mode: AUTO
+    scan-min-y: 32
+    scan-max-y: 120
+    permission: ""
+
+  world_the_end:
+    enabled: false
+    display-name: "End"
+    min-radius: 500
+    max-radius: 3000
+    fallback-to-world: true
+    cooldown: 30
+    countdown: 3
+    cancel-on-move: true
+    max-attempts: 30
+    height-mode: AUTO
+    permission: ""
+
+  # survival:
+  #   enabled: true
+  #   display-name: "Survival"
+  #   min-radius: 1000
+  #   max-radius: 10000

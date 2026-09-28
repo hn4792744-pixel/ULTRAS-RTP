@@ -1,0 +1,36 @@
+name: ULTRAS_RTP
+version: '${version}'
+main: com.ultras.rtp.UltrasRTP
+api-version: '${apiVersion}'
+authors: [UC_Hussein]
+description: Premium safe random teleport by ULTRAS.
+load: POSTWORLD
+# Load before common RTP plugins so /rtp is registered by ULTRAS_RTP first.
+loadbefore: [BetterRTP, RandomTeleport, RTP]
+
+commands:
+  rtp:
+    description: Teleport to a random safe location.
+    usage: /rtp
+
+permissions:
+  ultras.rtp.use:
+    description: Use /rtp
+    default: true
+  ultras.rtp.reload:
+    description: Use /rtp reload
+    default: op
+  ultras.rtp.bypass.cooldown:
+    description: Ignore the RTP cooldown
+    default: op
+  ultras.rtp.bypass.move:
+    description: Do not cancel RTP when moving
+    default: op
+  ultras.rtp.admin:
+    description: All ULTRAS_RTP permissions
+    default: op
+    children:
+      ultras.rtp.use: true
+      ultras.rtp.reload: true
+      ultras.rtp.bypass.cooldown: true
+      ultras.rtp.bypass.move: true

@@ -1,0 +1,63 @@
+# ULTRAS RTP GUI design. Item keys under "items" = world names.
+# Slot priority: config.yml gui.worlds.<world>.slot  ->  items.<world>.slot  ->  auto.
+# Placeholders: <world> <name> <min> <max> <countdown> <cooldown>
+title: "<gradient:#7a0000:#b30000:#dc143c><bold>ᴜʟᴛʀᴀs ʀᴛᴘ</bold></gradient>"
+size: 27            # multiple of 9 (9-54)
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: "<gray> "
+  custom-model-data: 0
+  glow: false
+
+border:
+  enabled: true
+  material: RED_STAINED_GLASS_PANE
+  name: "<dark_red> "
+  custom-model-data: 0
+  glow: false
+
+items:
+  world:
+    material: GRASS_BLOCK
+    name: "<#dc143c>◇ <white><bold><world>"
+    lore:
+      - "<dark_gray>▪ <gray>ʀᴀᴅɪᴜs <dark_gray>• <white><min> - <max>"
+      - "<dark_gray>▪ <gray>ᴄᴏᴜɴᴛᴅᴏᴡɴ <dark_gray>• <white><countdown>s"
+      - ""
+      - "<#dc143c>▸ <gray>ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+    custom-model-data: 0
+    glow: true
+    enchants: {}
+  world_nether:
+    material: NETHERRACK
+    name: "<#dc143c>◇ <white><bold><world>"
+    lore:
+      - "<dark_gray>▪ <gray>ʀᴀᴅɪᴜs <dark_gray>• <white><min> - <max>"
+      - "<dark_gray>▪ <gray>ᴄᴏᴜɴᴛᴅᴏᴡɴ <dark_gray>• <white><countdown>s"
+      - ""
+      - "<#dc143c>▸ <gray>ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+    custom-model-data: 0
+    glow: true
+  world_the_end:
+    material: END_STONE
+    name: "<#dc143c>◇ <white><bold><world>"
+    lore:
+      - "<dark_gray>▪ <gray>ʀᴀᴅɪᴜs <dark_gray>• <white><min> - <max>"
+      - "<dark_gray>▪ <gray>ᴄᴏᴜɴᴛᴅᴏᴡɴ <dark_gray>• <white><countdown>s"
+      - ""
+      - "<#dc143c>▸ <gray>ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+    custom-model-data: 0
+    glow: true
+  # Used for any world without its own entry:
+  default:
+    material: COMPASS
+    name: "<#dc143c>◇ <white><bold><world>"
+    lore:
+      - "<dark_gray>▪ <gray>ʀᴀᴅɪᴜs <dark_gray>• <white><min> - <max>"
+      - ""
+      - "<#dc143c>▸ <gray>ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+    custom-model-data: 0
+    glow: false
+    enchants: {}   # example: { unbreaking: 1 }
